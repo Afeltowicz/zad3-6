@@ -1,0 +1,52 @@
+﻿<textarea cols="100" rows="50">
+<html>
+<head>
+<title>
+Przykład obliczenia P i Obw Prostokąta
+</title>
+<script language="JavaScript">
+function V(r,h)
+{
+r_liczba=parseFloat(r)
+h_liczba=parseFloat(h)
+V_wynik=r_liczba*h_liczba
+document.getElementsByName('obj')[0].value=V_wynik.toFixed(2); /* na dokument */
+alert("p="+V_wynik.toFixed(2)+" cm^2"); /*do okna Alert */
+pokaz1.innerHTML="p="+V_wynik.toFixed(2)+" cm^2"+"<br>"; /* do tabeli */
+}
+function Pc(r,h)
+{
+r_liczba=parseFloat(r)
+h_liczba=parseFloat(h)
+Pc_wynik=2*r_liczba+2*h_liczba
+document.getElementsByName('pole')[0].value=Pc_wynik.toFixed(2);
+alert("obw="+Pc_wynik.toFixed(2)+" cm");
+pokaz2.innerHTML="obw="+Pc_wynik.toFixed(2)+"cm";
+}
+</script>
+</head>
+<body>
+Obliczanie Pola i Obwodu prostokąta
+<br> <br>
+<form name="formularz" action="..." onsubmit="V(this.promien.value,this.wysokosc.value); Pc(this.promien.value,this.wysokosc.value);return false">
+Podaj a=
+<input size="6" name="promien">
+Podaj b=
+<input size="6" name="wysokosc">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Pole=
+<input size="6" name="obj">
+Obwód=
+<input size="6" name="pole">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body>
+</html>
+</textarea>
