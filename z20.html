@@ -1,0 +1,56 @@
+
+<html lang="pl">
+<head> 
+<title>
+Obliczenie pola oraz obwodu trapez równoramiennego
+</title>
+ <script language="JavaScript">
+function obwod_afe(a_afe, b_afe, c_afe)
+{
+ a_afe_liczba=parseFloat(a_afe)
+ b_afe_liczba=parseFloat(b_afe)
+ c_afe_liczba=parseFloat(c_afe)
+ obwod_afe_wynik=Math.sqrt(((((Math.abs(a_afe_liczba)-Math.abs(b_afe_liczba))/2)*((Math.abs(a_afe_liczba)-Math.abs(b_afe_liczba))/2))+(c_afe_liczba*c_afe_liczba)))*2+a_afe_liczba+b_afe_liczba
+ document.getElementsByName('obw')[0].value=obwod_afe_wynik.toFixed(2); 
+ alert("Obwod="+obwod_afe_wynik.toFixed(2)+" cm"); 
+ wyprowadz_obwod_afe.innerHTML="Obwod="+obwod_afe_wynik.toFixed(2)+" cm"+"<br>"; 
+}
+function Pole_afe(a_afe, b_afe, c_afe)
+{
+ a_afe_liczba=parseFloat(a_afe)
+ b_afe_liczba=parseFloat(b_afe)
+ c_afe_liczba=parseFloat(c_afe)
+ Pole_afe_wynik=(a_afe_liczba+b_afe_liczba)*c_afe_liczba*0.5
+ document.getElementsByName('pole')[0].value=Pole_afe_wynik.toFixed(2);
+ alert("Pole="+Pole_afe_wynik.toFixed(2)+" cm^2");
+ wyprowadz_pole_afe.innerHTML="Pole="+Pole_afe_wynik.toFixed(2)+"cm^2";
+}
+ </script>
+</head> 
+<body> 
+Obliczenie pola oraz obwodu trapez równoramiennego
+<br> <br>
+<form name="formularz" action="..." onsubmit="obwod_afe(this.a_dana_afe.value,this.b_dana_afe.value,this.c_dana_afe.value); 
+Pole_afe(this.a_dana_afe.value,this.b_dana_afe.value,this.c_dana_afe.value);return false"> 
+Podaj górną podstawę=
+<input size="6" name="a_dana_afe">
+Podaj dolną podstawę=
+<input size="6" name="b_dana_afe">
+Podaj wysokość=
+<input size="6" name="c_dana_afe">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Obwod=
+<input size="6" name="obw">
+Pole=
+<input size="6" name="pole">
+</form>
+<table>
+<tr id="wyprowadz_obwod_afe"></tr>
+<tr id="wyprowadz_pole_afe"></tr>
+</table>
+</body> 
+</html>

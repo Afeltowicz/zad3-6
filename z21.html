@@ -1,0 +1,51 @@
+<html lang="pl">
+<head> 
+<title>
+ Zadanie 21
+</title>
+ <script language="JavaScript">
+function dlug_afe(dl_afe, al_afe)
+{
+ dl_afe_liczba=parseFloat(dl_afe)
+ al_afe_liczba=parseFloat(al_afe)
+ dlug_afe_wynik=Math.sqrt((dl_afe_liczba*dl_afe_liczba)+(al_afe_liczba*al_afe_liczba)) 
+ document.getElementsByName('dl')[0].value=dlug_afe_wynik.toFixed(2); 
+ alert("Drabina="+dlug_afe_wynik.toFixed(2)+" m"); 
+ wyprowadz_dlugosc_afe.innerHTML="Drabina="+dlug_afe_wynik.toFixed(2)+" m"+"<br>"; 
+}
+function kat_afe(dl_afe, al_afe)
+{
+ dl_afe_liczba=parseFloat(dl_afe)
+ al_afe_liczba=parseFloat(al_afe)
+ kat_afe_wynik=Math.atan((dl_afe_liczba/al_afe_liczba))*180/Math.PI
+ document.getElementsByName('kat')[0].value=kat_afe_wynik.toFixed(2);
+ alert("Alfa="+kat_afe_wynik.toFixed(2)+" [stopni]");
+ wyprowadz_kat_afe.innerHTML="Alfa="+kat_afe_wynik.toFixed(2)+" [stopni]";
+}
+ </script>
+</head> 
+<body> 
+Pobliczanie odległości od drabiny i kąta
+<br> <br>
+<form name="formularz" action="..." onsubmit="dlug_afe(this.d_dana_afe.value,this.x_dana_afe.value); 
+kat_afe(this.d_dana_afe.value,this.x_dana_afe.value);return false"> 
+Podaj d=
+<input size="6" name="d_dana_afe">
+Podaj x=
+<input size="6" name="x_dana_afe">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Drabina=
+<input size="6" name="dl">
+Alfa=
+<input size="6" name="kat">
+</form>
+<table>
+<tr id="wyprowadz_dlugosc_afe"></tr>
+<tr id="wyprowadz_kat_afe"></tr>
+</table>
+</body> 
+</html>
