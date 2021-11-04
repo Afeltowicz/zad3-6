@@ -1,0 +1,56 @@
+<html lang="pl">
+<head> 
+<title>
+ Zadanie 22
+</title>
+ <script language="JavaScript">
+function wys_afe(odl_afe, s_afe)
+{
+	odl_afe_liczba = parseFloat(odl_afe);
+	s_afe_liczba = parseFloat(s_afe);
+	obliczanie = ((s_afe_liczba*s_afe_liczba)-(odl_afe_liczba*odl_afe_liczba));
+	h_afe = Math.sqrt(obliczanie);
+	document.getElementsByName('h')[0].value=h_afe.toFixed(2);
+    alert("h="+h_afe.toFixed(2)+" km");
+    pokaz1.innerHTML="h="+h_afe.toFixed(2)+" km"+"<br>";
+}
+function war_kata_afe(odl_afe, s_afe)
+{
+	odl_afe_liczba = parseFloat(odl_afe);
+	s_afe_liczba = parseFloat(s_afe);
+	obliczanie = ((s_afe_liczba*s_afe_liczba)-(odl_afe_liczba*odl_afe_liczba));
+	h_afe = Math.sqrt(obliczanie);
+	h_afe_liczba = parseFloat(h_afe);
+	kat_afe = Math.asin((h_afe/s_afe_liczba)) * 180 / Math.PI;
+	document.getElementsByName('k')[0].value=kat_afe.toFixed(2);
+	alert("kąt="+kat_afe.toFixed(2)+" [stopni]");
+	pokaz2.innerHTML="kąt="+kat_afe.toFixed(2)+" [stopni]";
+}
+ </script>
+</head> 
+<body> 
+Obliczanie wysokości oraz kąta startu samolotu
+<br> <br>
+<form name="formularz" action="..." onsubmit="wys_afe(this.odleglosc.value,this.droga.value); 
+war_kata_afe(this.odleglosc.value,this.droga.value);return false"> 
+Podaj odległość między Arturem i Dawidem =
+<input size="6" name="odleglosc">
+<br> <br>
+Podaj drogę, którą przebył samolot =
+<input size="6" name="droga">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+h=
+<input size="6" name="h">
+kąt=
+<input size="6" name="k">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>
