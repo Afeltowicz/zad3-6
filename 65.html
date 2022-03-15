@@ -1,0 +1,30 @@
+<html lang="pl">
+<head>
+<script type="text/javascript">
+function okno_zamknij_afeltowicz() 
+ {
+ window.close()
+ }
+</script>
+</head>
+<body>
+<div style="color:green;font-size:41px;">
+<script language="JavaScript">
+var rok_afe=prompt("Od którego roku JavaScript jest w użyciu?","");
+document.write("Wczytany rok=",rok_afe);
+if (rok_afe=='1995')
+{
+document.write('<p style="font-size:20; color:blue">Brawo wiesz od kiedy działa Javasript</p>');
+document.write('<input type="button" value="zamknij okno" onclick="okno_zamknij_afeltowicz()">');
+}
+else
+{
+document.write('<p style="font-size:50; color:red">Źle</p>');
+document.write('<input type="button" value="zamknij okno" onclick="okno_zamknij_afeltowicz()">');
+}
+</script>
+</div>
+</body>
+</html>
+
+
